@@ -22,8 +22,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/LandonRGeorge/fem-conference-ticket-generator)
-- Live Site URL: [Add live site URL here](https://warm-druid-740b8a.netlify.app/)
+- [Solution URL](https://github.com/LandonRGeorge/fem-conference-ticket-generator)
+- [Live Site URL](https://warm-druid-740b8a.netlify.app/)
 
 ### Built with
 - React
