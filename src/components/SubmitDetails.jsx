@@ -36,8 +36,9 @@ export default function SubmitDetails({data}) {
               </div>
             </div>
           </div>
+          <div className="ticket-number">#01609</div>
+
         </div>
-        <div className="ticket-number">#01609</div>
       </section>
 
 

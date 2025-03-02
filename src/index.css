@@ -25,17 +25,6 @@ body {
     min-height: 100vh;
 }
 
-@media (max-width: 700px) {
-    body {
-        background-image: url("./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg"), url("./assets/images/pattern-squiggly-line-top.svg"), url("./assets/images/background-tablet.png");
-    }
-}
-
-@media (max-width: 400px) {
-    body {
-        background-image: url("./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg"), url("./assets/images/pattern-squiggly-line-top.svg"), url("./assets/images/background-mobile.png");
-    }
-}
 
 #root {
     display: flex;
@@ -80,6 +69,12 @@ form input[type="email"] {
     color: var(--neutral-0);
 }
 
+form input[type="text"]::placeholder,
+form input[type="email"]::placeholder {
+    color: currentColor;
+    opacity: 0.6;
+}
+
 form label {
     font-size: 20px;
     display: block;
@@ -93,10 +88,11 @@ form label {
 }
 
 .drop-zone {
+    width: 100%;
     position: relative;
     border: 1px dashed #ccc;
     border-radius: 8px;
-    padding: 32px;
+    padding-block: 16px;
     text-align: center;
     cursor: pointer;
     transition: all .2s ease;
@@ -170,7 +166,6 @@ header {
 }
 
 
-
 .form-container {
     display: flex;
     flex-direction: column;
@@ -202,6 +197,7 @@ header {
 
 .ticket-container {
     position: relative;
+    width: 100%;
 }
 
 .ticket-outer {
@@ -209,7 +205,10 @@ header {
     top: 0;
     bottom: 0;
     left: 0;
+    right: 0;
     padding: 1rem;
+    display: flex;
+    justify-content: space-between;
 }
 
 .ticket-avatar {
@@ -234,6 +233,7 @@ header {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    flex-grow: 1;
 }
 
 .ticket-personal-details__github {
@@ -248,11 +248,10 @@ header {
 }
 
 .ticket-number {
-    position: absolute;
-    rotate: 90deg;
-    right: 9rem;
-    top: 0;
-    bottom: 0;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    text-align: center;
+    margin-right: 2rem;
     font-size: 1.5rem;
     opacity: .4;
 }
@@ -261,6 +260,35 @@ header {
     opacity: .4;
     margin: .4rem 0 0 3rem;
 }
+
+.ticket-container > img {
+    width: 100%;
+}
+
+@media (max-width: 700px) {
+    body {
+        background-image: url("./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg"), url("./assets/images/pattern-squiggly-line-top.svg"), url("./assets/images/background-tablet.png");
+    }
+    .ticket-number {
+        margin-right: 2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        background-image: url("./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg"), url("./assets/images/pattern-squiggly-line-top.svg"), url("./assets/images/background-mobile.png");
+    }
+
+    .submitted-header *,
+    .cta h2 {
+        font-size: 1.8rem;
+    }
+
+    form {
+        width: 100%;
+    }
+}
+
 
 
 
