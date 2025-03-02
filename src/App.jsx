@@ -1,28 +1,31 @@
 import React, {useState} from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import Form from './components/Form.jsx'
 import Header from './components/Header.jsx'
-import CTA from "./components/CTA.jsx";
 import SubmitDetails from "./components/SubmitDetails.jsx";
+import avatar from './assets/images/image-avatar.jpg'
 
 function App() {
-  const [count, setCount] = useState(0)
   const [data, setData] = React.useState({
     fullName: "",
     emailAddress: "",
     githubUsername: "",
+    avatar: avatar,
   })
 
   const formSubmitted = data.fullName && data.emailAddress && data.githubUsername
 
+  let content;
+  if (formSubmitted) {
+    content = <SubmitDetails data={data}/>
+  } else {
+    content = <Form setData={setData}/>
+  }
+
   return (
-    <>
+    <main>
       <Header/>
-      {!formSubmitted ? <><CTA /><Form data={data} setData={setData}/></>:
-        <SubmitDetails data={data}/>
-      }
-    </>
+      {content}
+    </main>
   )
 }
 
